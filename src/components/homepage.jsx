@@ -16,11 +16,22 @@ const App = () => {
             <style>
                 {`
                 body {
-                    font-family: 'Poppins', sans-serif; /* Changed font to Poppins */
-                    background: linear-gradient(to bottom right, #2A003A, #111111); /* Original gradient */
-                    min-height: 100vh; /* Ensure gradient covers full viewport height */
-                    color: #ffffff; /* Default text color for better contrast */
-                }
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(to bottom right, #2A003A, #111111);
+        min-height: 100vh;
+        color: #ffffff;
+    }
+    /* Section animation styles */
+    .fade-in-section {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+        will-change: opacity, transform;
+    }
+    .fade-in-section.visible {
+        opacity: 1;
+        transform: none;
+    }
                 /* Custom Tailwind colors */
                 .gradient-bg {
                     background: linear-gradient(to bottom right, #2A003A, #111111); /* Original gradient */
@@ -70,9 +81,14 @@ const App = () => {
             <header className="bg-black bg-opacity-50 py-4 shadow-lg sticky top-0 z-50 backdrop-blur-sm">
                 <nav className="container mx-auto px-4 flex justify-between items-center">
                     {/* Logo */}
-                    <a href="#" className="text-3xl font-extrabold tracking-tight">
-                        <span className="text-white">AWS </span><span className="text-gradient">Cloud Club</span>
-                    </a>
+                    <div className="flex items-center gap-2">
+        <img src="/images/aws_club_logo.png" width="100px" alt="AWS Club Logo" />
+        <a href="#" className="text-3xl font-extrabold tracking-tight">
+            <span className="text-white"> AWS </span>
+            <div></div>
+            <span className="text-gradient"> Cloud Club</span>
+        </a>
+    </div>
 
                     {/* Desktop Navigation */}
                     <div className="hidden md:flex space-x-8">
@@ -665,7 +681,7 @@ const App = () => {
                     <div className="flex flex-col md:flex-row justify-center gap-8">
                         <div className="card-gradient p-6 rounded-xl shadow-lg glow-effect flex-1">
                             <h3 className="text-xl font-semibold mb-3 text-white">Email Us</h3>
-                            <p className="text-white opacity-90">info@awscloudclub.com</p>
+                            <p className="text-white opacity-90">aws@vitbhopal.ac.in</p>
                         </div>
                         <div className="card-gradient p-6 rounded-xl shadow-lg glow-effect flex-1">
                             <h3 className="text-xl font-semibold mb-3 text-white">Follow Us</h3>
