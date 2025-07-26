@@ -104,23 +104,302 @@ const App = () => {
                     </div>
                 </div>
             </header>
+{/* Hero Section */}
+<section id="home" className="relative h-screen flex items-center justify-start overflow-hidden">
+  {/* Background Video Container */}
+  <div className="absolute inset-0 z-0">
+    {/* Video Placeholder - Replace with your actual video */}
+    <div className="w-full h-full bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-800 relative">
+      {/* Animated Tech Pattern Overlay */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-10 left-10 w-32 h-32 border border-cyan-400 rounded-full animate-pulse"></div>
+        <div className="absolute top-40 right-20 w-24 h-24 border border-purple-400 rounded-lg animate-bounce"></div>
+        <div className="absolute bottom-32 left-32 w-20 h-20 border border-pink-400 rounded-full animate-ping"></div>
+        <div className="absolute bottom-20 right-40 w-28 h-28 border border-blue-400 rounded-lg animate-pulse"></div>
+      </div>
+      
+      {/* Replace this entire div with your video element */}
+      <video 
+        className="w-full h-full object-cover" 
+        autoPlay 
+        muted 
+        loop 
+        playsInline
+      >
+        <source src="/images/Video-246.mp4" type="video/mp4" />
+      </video>
+      
+      {/* 
+      Replace the placeholder div above with:
+      <video 
+        className="w-full h-full object-cover" 
+        autoPlay 
+        muted 
+        loop 
+        playsInline
+      >
+        <source src="your-video.mp4" type="video/mp4" />
+      </video>
+      */}
+    </div>
+    
+    {/* Dark overlay for better text readability */}
+    <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+    
+    {/* Gradient overlay for depth */}
+    <div className="absolute inset-0 bg-gradient-to-r from-purple-900/40 via-transparent to-blue-900/40"></div>
+  </div>
 
-            {/* Hero Section */}
-            <section id="home" className="relative h-screen flex items-center justify-center text-center px-4 py-20">
-                <div className="absolute inset-0 gradient-bg opacity-70 z-0"></div>
-                <div className="relative z-10 max-w-4xl mx-auto">
-                    <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-6 text-white drop-shadow-lg">
-                        Innovate. Learn. Build. <br className="hidden md:block" /> With <span className="text-gradient">AWS Cloud Club</span>.
-                    </h1>
-                    <p className="text-lg md:text-xl text-white mb-10 opacity-90 leading-relaxed">
-                        Empowering the next generation of cloud enthusiasts and developers. Dive deep into AWS services, network with peers, and build groundbreaking solutions.
-                    </p>
-                    <a href="#join" className="btn-primary inline-block text-lg md:text-xl px-8 py-4 rounded-full shadow-xl hover:scale-105 transform transition duration-300 ease-in-out">
-                        Join the Cloud Revolution
-                    </a>
+  {/* Content Container - Positioned to bottom left */}
+  <div className="absolute bottom-16 left-8 z-10 max-w-lg">
+    <div className="space-y-4">
+      <h1 className="font-extrabold leading-tight text-white drop-shadow-lg">
+        <div className="text-5xl md:text-6xl whitespace-nowrap">Innovate. Learn. Build.</div>
+        <div className="text-gradient text-5xl md:text-6xl whitespace-nowrap">AWS Cloud Club.</div>
+      </h1>
+      
+      <p className="text-lg text-white opacity-90 leading-relaxed max-w-xl">
+        Empowering the next generation of cloud enthusiasts and developers. Dive deep into AWS services, network with peers, and build groundbreaking solutions.
+      </p>
+    </div>
+  </div>
+
+  <style jsx>{`
+    .text-gradient {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-decoration: none;
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      text-decoration: none;
+    }
+  `}</style>
+</section>
+            {/* Statistics Section */}
+            <section className="py-16 px-4 bg-black bg-opacity-30">
+                <div className="container mx-auto max-w-7xl">
+                    {/* Statistics Cards */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-12">
+                        <div className="card-gradient p-6 rounded-xl text-center border-2 border-fuchsia-500 hover:scale-105 transition duration-300">
+                            <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">150+</div>
+                            <div className="text-white text-sm font-medium">ACTIVE MEMBERS</div>
+                        </div>
+                        <div className="card-gradient p-6 rounded-xl text-center border-2 border-fuchsia-500 hover:scale-105 transition duration-300">
+                            <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">30+</div>
+                            <div className="text-white text-sm font-medium">CLOUD PROJECTS</div>
+                        </div>
+                        <div className="card-gradient p-6 rounded-xl text-center border-2 border-fuchsia-500 hover:scale-105 transition duration-300">
+                            <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">12+</div>
+                            <div className="text-white text-sm font-medium">WORKSHOPS</div>
+                        </div>
+                        <div className="card-gradient p-6 rounded-xl text-center border-2 border-fuchsia-500 hover:scale-105 transition duration-300">
+                            <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">6+</div>
+                            <div className="text-white text-sm font-medium">AWS CERTIFICATIONS</div>
+                        </div>
+                        <div className="card-gradient p-6 rounded-xl text-center border-2 border-fuchsia-500 hover:scale-105 transition duration-300">
+                            <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">1,000+</div>
+                            <div className="text-white text-sm font-medium">GITHUB CONTRIBUTIONS</div>
+                        </div>
+                    </div>
+
+                    {/* Call-to-Action Banner */}
+                    <div className="card-gradient p-8 rounded-xl border-2 border-fuchsia-500 glow-effect">
+                        <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
+                            <div className="text-center lg:text-left">
+                                <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                                    Join our cloud community before memberships fill up in
+                                </h3>
+                            </div>
+                            
+                            {/* Countdown Timer */}
+                            <div className="flex items-center gap-3">
+                                <div className="bg-black bg-opacity-50 p-3 rounded-lg border border-fuchsia-500 min-w-[60px] text-center">
+                                    <div className="text-2xl font-bold text-gradient" id="days">30</div>
+                                    <div className="text-xs text-white opacity-75">DAYS</div>
+                                </div>
+                                <div className="text-fuchsia-400 text-2xl font-bold">:</div>
+                                <div className="bg-black bg-opacity-50 p-3 rounded-lg border border-fuchsia-500 min-w-[60px] text-center">
+                                    <div className="text-2xl font-bold text-gradient" id="hours">15</div>
+                                    <div className="text-xs text-white opacity-75">HOURS</div>
+                                </div>
+                                <div className="text-fuchsia-400 text-2xl font-bold">:</div>
+                                <div className="bg-black bg-opacity-50 p-3 rounded-lg border border-fuchsia-500 min-w-[60px] text-center">
+                                    <div className="text-2xl font-bold text-gradient" id="minutes">45</div>
+                                    <div className="text-xs text-white opacity-75">MINUTES</div>
+                                </div>
+                                <div className="text-fuchsia-400 text-2xl font-bold">:</div>
+                                <div className="bg-black bg-opacity-50 p-3 rounded-lg border border-fuchsia-500 min-w-[60px] text-center">
+                                    <div className="text-2xl font-bold text-gradient" id="seconds">30</div>
+                                    <div className="text-xs text-white opacity-75">SECONDS</div>
+                                </div>
+                            </div>
+
+                            <div className="text-center">
+                                <div className="mb-4">
+                                    <span className="text-white text-sm">Starting from</span><br/>
+                                    <span className="text-3xl font-bold text-gradient">Free</span>
+                                    <span className="text-white text-xl line-through opacity-60 ml-2">₹299</span>
+                                </div>
+                                <button className="btn-primary px-8 py-3 text-lg font-bold rounded-full hover:scale-105 transform transition duration-300">
+                                    JOIN NOW
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
+            <section class="explore-cloud">
+  
+</section>
+<section id="explore-cloud" className="py-20 px-4">
+      <div className="container mx-auto max-w-7xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+          {/* Left side - Heading */}
+          <div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white leading-tight">
+              🚀 Explore the Domains We Focus On.
+            </h2>
+            <p className="text-lg text-white opacity-90 leading-relaxed">
+              Dive into the key areas our <span className="text-gradient">AWS Club</span> specializes in — from cloud infrastructure to cutting-edge AI and IoT solutions.
+            </p>
+          </div>
+          
+          {/* Right side - Video Placeholder */}
+          <div className="flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-md h-64 bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg overflow-hidden shadow-xl">
+              {/* Video placeholder - replace with your video */}
+              <video 
+        className="w-full h-full object-cover" 
+        autoPlay 
+        muted 
+        loop 
+        playsInline
+      >
+        <source src="/images/Video-182.mp4" type="video/mp4" />
+      </video>
+            </div>
+          </div>
+        </div>
 
+        {/* Grid of Track Cards - 3 Rows Layout */}
+        <div className="space-y-6">
+          {/* Row 1 - 4 cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="relative h-40 rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition duration-300 border-2 border-fuchsia-500 hover:border-fuchsia-400 hover:shadow-lg hover:shadow-fuchsia-500/30" style={{backgroundImage: 'url("/images/aws_infra.jpeg")', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 to-purple-900/80"></div>
+              <div className="relative z-10 p-6 h-full flex items-center justify-center">
+                <h3 className="text-white font-bold text-center text-base">AWS Infrastructure</h3>
+              </div>
+            </div>
+
+            <div className="relative h-40 rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition duration-300 border-2 border-fuchsia-500 hover:border-fuchsia-400 hover:shadow-lg hover:shadow-fuchsia-500/30" style={{backgroundImage: 'url("/images/cloud_computing.jpg.webp")', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+              <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 to-blue-900/80"></div>
+              <div className="relative z-10 p-6 h-full flex items-center justify-center">
+                <h3 className="text-white font-bold text-center text-base">Cloud Computing</h3>
+              </div>
+            </div>
+
+            <div className="relative h-40 rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition duration-300 border-2 border-fuchsia-500 hover:border-fuchsia-400 hover:shadow-lg hover:shadow-fuchsia-500/30" style={{backgroundImage: 'url("/images/devops.jpeg")', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+              <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/80 to-purple-900/80"></div>
+              <div className="relative z-10 p-6 h-full flex items-center justify-center">
+                <h3 className="text-white font-bold text-center text-base">DevOps</h3>
+              </div>
+            </div>
+
+            <div className="relative h-40 rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition duration-300 border-2 border-fuchsia-500 hover:border-fuchsia-400 hover:shadow-lg hover:shadow-fuchsia-500/30" style={{backgroundImage: 'url("/images/software_arch.png.webp")', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-900/80 to-pink-900/80"></div>
+              <div className="relative z-10 p-6 h-full flex items-center justify-center">
+                <h3 className="text-white font-bold text-center text-base">Software Architecture</h3>
+              </div>
+            </div>
+          </div>
+
+          {/* Row 2 - 4 cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="relative h-40 rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition duration-300 border-2 border-fuchsia-500 hover:border-fuchsia-400 hover:shadow-lg hover:shadow-fuchsia-500/30" style={{backgroundImage: 'url("/images/aws_ml.png")', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+              <div className="absolute inset-0 bg-gradient-to-br from-teal-900/80 to-blue-900/80"></div>
+              <div className="relative z-10 p-6 h-full flex items-center justify-center">
+                <h3 className="text-white font-bold text-center text-base">Machine Learning</h3>
+              </div>
+            </div>
+
+            <div className="relative h-40 rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition duration-300 border-2 border-fuchsia-500 hover:border-fuchsia-400 hover:shadow-lg hover:shadow-fuchsia-500/30" style={{backgroundImage: 'url("/images/frontend.png")', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 to-indigo-900/80"></div>
+              <div className="relative z-10 p-6 h-full flex items-center justify-center">
+                <h3 className="text-white font-bold text-center text-base">Frontend & UI/UX</h3>
+              </div>
+            </div>
+
+            <div className="relative h-40 rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition duration-300 border-2 border-fuchsia-500 hover:border-fuchsia-400 hover:shadow-lg hover:shadow-fuchsia-500/30" style={{backgroundImage: 'url("/images/cloud-testing-tools.jpeg")', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+              <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 to-purple-900/80"></div>
+              <div className="relative z-10 p-6 h-full flex items-center justify-center">
+                <h3 className="text-white font-bold text-center text-base">Quality & Testing</h3>
+              </div>
+            </div>
+
+            <div className="relative h-40 rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition duration-300 border-2 border-fuchsia-500 hover:border-fuchsia-400 hover:shadow-lg hover:shadow-fuchsia-500/30" style={{backgroundImage: 'url("/images/security.jpeg")', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+              <div className="absolute inset-0 bg-gradient-to-br from-teal-900/80 to-blue-900/80"></div>
+              <div className="relative z-10 p-6 h-full flex items-center justify-center">
+                <h3 className="text-white font-bold text-center text-base">Cybersecurity</h3>
+              </div>
+            </div>
+          </div>
+
+          {/* Row 3 - 4 cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="relative h-40 rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition duration-300 border-2 border-fuchsia-500 hover:border-fuchsia-400 hover:shadow-lg hover:shadow-fuchsia-500/30" style={{backgroundImage: 'url("/images/iot.jpg.webp")', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 to-teal-900/80"></div>
+              <div className="relative z-10 p-6 h-full flex items-center justify-center">
+                <h3 className="text-white font-bold text-center text-base">IoT & Hardware</h3>
+              </div>
+            </div>
+
+            <div className="relative h-40 rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition duration-300 border-2 border-fuchsia-500 hover:border-fuchsia-400 hover:shadow-lg hover:shadow-fuchsia-500/30" style={{backgroundImage: 'url("/images/opensource.jpg")', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+              <div className="absolute inset-0 bg-gradient-to-br from-teal-900/80 to-green-900/80"></div>
+              <div className="relative z-10 p-6 h-full flex items-center justify-center">
+                <h3 className="text-white font-bold text-center text-base">Open Source</h3>
+              </div>
+            </div>
+
+            <div className="relative h-40 rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition duration-300 border-2 border-fuchsia-500 hover:border-fuchsia-400 hover:shadow-lg hover:shadow-fuchsia-500/30" style={{backgroundImage: 'url("/images/product.jpeg")', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+              <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 to-blue-900/80"></div>
+              <div className="relative z-10 p-6 h-full flex items-center justify-center">
+                <h3 className="text-white font-bold text-center text-base">Product Management</h3>
+              </div>
+            </div>
+
+            <div className="relative h-40 rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition duration-300 border-2 border-fuchsia-500 hover:border-fuchsia-400 hover:shadow-lg hover:shadow-fuchsia-500/30" style={{backgroundImage: 'url("/images/startup.png")', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+              <div className="absolute inset-0 bg-gradient-to-br from-teal-900/80 to-blue-900/80"></div>
+              <div className="relative z-10 p-6 h-full flex items-center justify-center">
+                <h3 className="text-white font-bold text-center text-base">Startups & Scaling</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <style jsx>{`
+        .text-gradient {
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+      `}</style>
+    </section>
             {/* About Us Section */}
             <section id="about" className="py-20 px-4 bg-black bg-opacity-40 rounded-t-3xl -mt-16 relative z-20">
                 <div className="container mx-auto max-w-5xl">
@@ -146,54 +425,223 @@ const App = () => {
                     </div>
                 </div>
             </section>
+            <section className="py-20 px-4 bg-black bg-opacity-40">
+  <style>{`
+    @keyframes scrollUp {
+      0% { transform: translateY(0%); }
+      100% { transform: translateY(-50%); }
+    }
+  `}</style>
+  <div className="container mx-auto max-w-7xl">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      
+      {/* Left Side Content */}
+      <div>
+        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white leading-tight">
+          Why Join <span className="text-gradient">AWS Club?</span>
+        </h2>
+        <p className="text-lg text-white opacity-90 leading-relaxed mb-8">
+          AWS Cloud Club is the best place to get a complete overview of recent insights and future trends in modern cloud development.
+        </p>
 
-            {/* Upcoming Events Section */}
-            <section id="events" className="py-20 px-4">
-                <div className="container mx-auto max-w-5xl">
-                    <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-white">Upcoming <span className="text-gradient">Events</span></h2>
-                    <div className="grid md:grid-cols-3 gap-8">
-                        {/* Event Card 1 */}
-                        <div className="card-gradient p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out glow-effect">
-                            <h3 className="text-2xl font-semibold mb-3 text-white">Cloud Fundamentals Workshop</h3>
-                            <p className="accent-text text-sm mb-4 font-medium">August 15, 2025 | 10:00 AM - 1:00 PM</p>
-                            <p className="text-white opacity-90 mb-4">
-                                An introductory workshop covering the basics of AWS, including EC2, S3, and VPC. Perfect for beginners!
-                            </p>
-                            <a href="#" className="accent-text accent-hover font-medium flex items-center transition duration-300">
-                                Learn More
-                                <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
-                            </a>
-                        </div>
+        <div className="space-y-4 mb-8">
+          {[
+            ['🔧', 'Work on real-world cloud projects using AWS'],
+            ['🎯', 'Prepare for AWS certifications with guided mentoring'],
+            ['🤝', 'Collaborate in a passionate tech community'],
+            ['🚀', 'Join internal hackathons and cloud sprints'],
+            ['📚', 'Attend technical workshops by AWS experts and alumni'],
+            ['🌍', 'Get access to global AWS student programs'],
+            ['💼', 'Boost your resume with cloud experience and leadership'],
+          ].map(([icon, text], i) => (
+            <div key={i} className="flex items-start gap-3">
+              <span className="text-fuchsia-400 text-xl mt-1">{icon}</span>
+              <span className="text-white text-lg">{text}</span>
+            </div>
+          ))}
+        </div>
 
-                        {/* Event Card 2 */}
-                        <div className="card-gradient p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out glow-effect">
-                            <h3 className="text-2xl font-semibold mb-3 text-white">Serverless Architectures with Lambda</h3>
-                            <p className="accent-text text-sm mb-4 font-medium">September 5, 2025 | 2:00 PM - 5:00 PM</p>
-                            <p className="text-white opacity-90 mb-4">
-                                Dive into building serverless applications using AWS Lambda, API Gateway, and DynamoDB.
-                            </p>
-                            <a href="#" className="accent-text accent-hover font-medium flex items-center transition duration-300">
-                                Learn More
-                                <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
-                            </a>
-                        </div>
+        <div className="flex flex-col sm:flex-row gap-4">
+          <button className="btn-primary px-8 py-3 text-lg font-bold rounded-full">
+            GET STARTED
+          </button>
+          <button className="border-2 border-fuchsia-500 text-fuchsia-400 px-8 py-3 text-lg font-bold rounded-full hover:bg-fuchsia-500 hover:text-white transition duration-300">
+            SPONSOR
+          </button>
+        </div>
+      </div>
 
-                        {/* Event Card 3 */}
-                        <div className="card-gradient p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out glow-effect">
-                            <h3 className="text-2xl font-semibold mb-3 text-white">AWS Solutions Architect Study Group</h3>
-                            <p className="accent-text text-sm mb-4 font-medium">Starts September 20, 2025 | Weekly</p>
-                            <p className="text-white opacity-90 mb-4">
-                                Prepare for the AWS Solutions Architect Associate certification with guided study sessions.
-                            </p>
-                            <a href="#" className="accent-text accent-hover font-medium flex items-center transition duration-300">
-                                Learn More
-                                <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
+      {/* Right Side Scrolling Image Gallery */}
+      <div className="relative h-[28rem] overflow-hidden rounded-xl">
+        <div
+          className="flex flex-col gap-4"
+          style={{
+            animation: 'scrollUp 20s linear infinite',
+          }}
+        >
+          {[
+            '/images/IMG_0861.jpg',
+            '/images/IMG_0801.jpg',
+            '/images/IMG_0799.jpg',
+            '/images/IMG_0865.jpg',
+            '/images/IMG_0914.jpg',
+            '/images/IMG_0920.jpg',
+            '/images/IMG_0928.jpg',
+          ].map((img, i) => (
+            <div
+              key={i}
+              className="min-h-48 rounded-lg overflow-hidden bg-cover bg-center"
+              style={{
+                backgroundImage: `url('${img}')`,
+                height: '12rem',
+              }}
+            >
+              <div className="w-full h-full bg-black bg-opacity-40 flex items-center justify-center">
+                <p className="text-white text-lg font-semibold"></p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
 
+    </div>
+  </div>
+</section>
+
+    
+<section id="events" className="py-20 px-4">
+        <div className="container mx-auto max-w-5xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-white">
+            Upcoming <span className="text-gradient">Events</span>
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Event Card 1 */}
+            <div className="card-gradient p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out glow-effect">
+              <h3 className="text-2xl font-semibold mb-3 text-white">AWS Student Community Day</h3>
+              <p className="accent-text text-sm mb-4 font-medium">
+                August 15, 2025 | 10:00 AM - 1:00 PM
+              </p>
+              <p className="text-white opacity-90 mb-4">
+                Join students and professionals to learn the latest in AWS Cloud, with workshops, networking, and insights from global AWS experts.
+              </p>
+              <div className="mb-3">
+                <h4 className="font-semibold text-white">Featured Speakers</h4>
+                <ul className="text-white opacity-90 text-sm mt-2 list-disc pl-5">
+                  <li>Eric Hanchett – Sr. Developer Advocate, AWS</li>
+                  <li>Eric Johnson – Principal Developer Advocate, AWS</li>
+                  <li>Nick Coult – Director, Serverless, AWS</li>
+                  <li>Sheen Brisals – AWS Serverless Hero</li>
+                </ul>
+              </div>
+              <a href="#" className="accent-text accent-hover font-medium flex items-center transition duration-300">
+                Learn More
+                <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+
+            {/* Event Card 2 */}
+            <div className="card-gradient p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out glow-effect">
+              <h3 className="text-2xl font-semibold mb-3 text-white">Serverless Architectures with Lambda</h3>
+              <p className="accent-text text-sm mb-4 font-medium">September 5, 2025 | 2:00 PM - 5:00 PM</p>
+              <p className="text-white opacity-90 mb-4">
+                Dive into building serverless applications using AWS Lambda, API Gateway, and DynamoDB.
+                <br />
+                <span className="block mt-2">Includes a live demo deploying a RESTful API in real-time and hands-on troubleshooting tips.</span>
+                <span className="block mt-2">🍕 Light refreshments will be provided. Attendees also receive exclusive access to a Lambda use-case cheat sheet.</span>
+              </p>
+              <a href="#" className="accent-text accent-hover font-medium flex items-center transition duration-300">
+                Learn More
+                <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+
+            {/* Event Card 3 */}
+            <div className="card-gradient p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out glow-effect">
+              <h3 className="text-2xl font-semibold mb-3 text-white">AWS Solutions Architect Study Group</h3>
+              <p className="accent-text text-sm mb-4 font-medium">Starts September 20, 2025 | Weekly</p>
+              <p className="text-white opacity-90 mb-4">
+                Prepare for the AWS Solutions Architect Associate certification with guided study sessions.
+                <br />
+                <span className="block mt-2">Access a shared repository of practice exams and study guides curated by certified architects.</span>
+                <span className="block mt-2">Virtual participation available with Slack channel support for Q&A between sessions.</span>
+              </p>
+              <a href="#" className="accent-text accent-hover font-medium flex items-center transition duration-300">
+                Learn More
+                <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Color Transition Divider */}
+      <div className="h-24 bg-gradient-to-b from-transparent via-purple-900/20 to-purple-800/30"></div>
+
+      {/* Board Members Section */}
+      <section className="py-20 px-4 bg-gradient-to-b from-purple-800/30 to-transparent">
+        <div className="container mx-auto max-w-7xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
+            Meet the <span className="text-gradient">Board</span>
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 justify-items-center">
+            {/* Akash Kharabe - President */}
+            <div className="card-gradient p-8 rounded-xl shadow-lg glow-effect text-center w-full max-w-xs flex flex-col items-center border-2 border-fuchsia-500 hover:border-fuchsia-400 transform hover:scale-110 hover:-translate-y-2 transition-all duration-300 ease-in-out hover:shadow-2xl hover:shadow-fuchsia-500/30">
+              <div className="w-36 h-36 mb-6 rounded-full overflow-hidden bg-gradient-to-br from-fuchsia-500/50 to-indigo-800/60 border-4 border-indigo-400 flex items-center justify-center transform hover:scale-105 transition-transform duration-300">
+                <img src="/images/akash.jpeg" alt="Akash Kharabe" className="object-cover w-full h-full hover:brightness-110 transition-all duration-300" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Akash Kharabe</h3>
+              <p className="accent-text text-base font-semibold mb-3">President</p>
+              <p className="text-white opacity-80 text-sm leading-relaxed">Passionate leader driving innovation and member growth.</p>
+            </div>
+
+            {/* Shreyansh Uttam - Vice President */}
+            <div className="card-gradient p-8 rounded-xl shadow-lg glow-effect text-center w-full max-w-xs flex flex-col items-center border-2 border-fuchsia-500 hover:border-fuchsia-400 transform hover:scale-110 hover:-translate-y-2 transition-all duration-300 ease-in-out hover:shadow-2xl hover:shadow-fuchsia-500/30">
+              <div className="w-36 h-36 mb-6 rounded-full overflow-hidden bg-gradient-to-br from-indigo-500/40 to-purple-800/60 border-4 border-indigo-400 flex items-center justify-center transform hover:scale-105 transition-transform duration-300">
+                <img src="/images/shreyansh.jpeg" alt="Shreyansh Uttam" className="object-cover w-full h-full hover:brightness-110 transition-all duration-300" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Shreyansh Uttam</h3>
+              <p className="accent-text text-base font-semibold mb-3">Vice President</p>
+              <p className="text-white opacity-80 text-sm leading-relaxed">Fostering collaboration and supporting bold club goals.</p>
+            </div>
+
+            {/* Lakshya Khtour - General Secretary */}
+            <div className="card-gradient p-8 rounded-xl shadow-lg glow-effect text-center w-full max-w-xs flex flex-col items-center border-2 border-fuchsia-500 hover:border-fuchsia-400 transform hover:scale-110 hover:-translate-y-2 transition-all duration-300 ease-in-out hover:shadow-2xl hover:shadow-fuchsia-500/30">
+              <div className="w-36 h-36 mb-6 rounded-full overflow-hidden bg-gradient-to-br from-pink-500/60 to-purple-900/50 border-4 border-indigo-400 flex items-center justify-center transform hover:scale-105 transition-transform duration-300">
+                <img src="/images/lakshya.jpeg" alt="Lakshya Khtour" className="object-cover w-full h-full hover:brightness-110 transition-all duration-300" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Lakshya Khtour</h3>
+              <p className="accent-text text-base font-semibold mb-3">General Secretary</p>
+              <p className="text-white opacity-80 text-sm leading-relaxed">Orchestrating events and keeping the club running smoothly.</p>
+            </div>
+
+            {/* Navya Srivastava - Operational Lead */}
+            <div className="card-gradient p-8 rounded-xl shadow-lg glow-effect text-center w-full max-w-xs flex flex-col items-center border-2 border-fuchsia-500 hover:border-fuchsia-400 transform hover:scale-110 hover:-translate-y-2 transition-all duration-300 ease-in-out hover:shadow-2xl hover:shadow-fuchsia-500/30">
+              <div className="w-36 h-36 mb-6 rounded-full overflow-hidden bg-gradient-to-br from-purple-500/50 to-blue-900/50 border-4 border-indigo-400 flex items-center justify-center transform hover:scale-105 transition-transform duration-300">
+                <img src="/images/navya.jpeg" alt="Navya Srivastava" className="object-cover w-full h-full hover:brightness-110 transition-all duration-300" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Navya Srivastava</h3>
+              <p className="accent-text text-base font-semibold mb-3">Operational Lead</p>
+              <p className="text-white opacity-80 text-sm leading-relaxed">Ensuring seamless execution behind the scenes for every initiative.</p>
+            </div>
+
+            {/* Yash Dhanraj Thakare - Treasurer */}
+            <div className="card-gradient p-8 rounded-xl shadow-lg glow-effect text-center w-full max-w-xs flex flex-col items-center border-2 border-fuchsia-500 hover:border-fuchsia-400 transform hover:scale-110 hover:-translate-y-2 transition-all duration-300 ease-in-out hover:shadow-2xl hover:shadow-fuchsia-500/30">
+              <div className="w-36 h-36 mb-6 rounded-full overflow-hidden bg-gradient-to-br from-fuchsia-400/30 to-indigo-900/70 border-4 border-indigo-400 flex items-center justify-center transform hover:scale-105 transition-transform duration-300">
+                <img src="/images/yash.jpg" alt="Yash Dhanraj Thakare" className="object-cover w-full h-full hover:brightness-110 transition-all duration-300" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Yash Dhanraj Thakare</h3>
+              <p className="accent-text text-base font-semibold mb-3">Treasurer</p>
+              <p className="text-white opacity-80 text-sm leading-relaxed">Managing resources with integrity and fostering transparency.</p>
+            </div>
+          </div>
+        </div>
+      </section>
             {/* Join Us Section */}
             <section id="join" className="py-20 px-4 bg-black bg-opacity-40">
                 <div className="container mx-auto max-w-3xl text-center">
