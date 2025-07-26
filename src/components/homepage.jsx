@@ -108,7 +108,7 @@ const App = () => {
 <section id="home" className="relative h-screen flex items-center justify-start overflow-hidden">
   {/* Background Video Container */}
   <div className="absolute inset-0 z-0">
-    {/* Video Placeholder - Replace with your actual video */}
+    {/* Video Placeholder -
     <div className="w-full h-full bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-800 relative">
       {/* Animated Tech Pattern Overlay */}
       <div className="absolute inset-0 opacity-30">
@@ -118,7 +118,7 @@ const App = () => {
         <div className="absolute bottom-20 right-40 w-28 h-28 border border-blue-400 rounded-lg animate-pulse"></div>
       </div>
       
-      {/* Replace this entire div with your video element */}
+      {/*video element */}
       <video 
         className="w-full h-full object-cover" 
         autoPlay 
@@ -130,7 +130,7 @@ const App = () => {
       </video>
       
       {/* 
-      Replace the placeholder div above with:
+      placeholder div above with:
       <video 
         className="w-full h-full object-cover" 
         autoPlay 
