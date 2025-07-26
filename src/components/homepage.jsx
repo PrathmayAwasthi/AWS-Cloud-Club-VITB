@@ -148,8 +148,8 @@ const App = () => {
     
     {/* Gradient overlay for depth */}
     <div className="absolute inset-0 bg-gradient-to-r from-purple-900/40 via-transparent to-blue-900/40"></div>
-  </div>
-
+</section>
+<section>
   {/* Content Container - Positioned to bottom left */}
   <div className="absolute bottom-16 left-8 z-10 max-w-lg">
     <div className="space-y-4">
@@ -670,10 +670,10 @@ const App = () => {
                         <div className="card-gradient p-6 rounded-xl shadow-lg glow-effect flex-1">
                             <h3 className="text-xl font-semibold mb-3 text-white">Follow Us</h3>
                             <div className="flex justify-center space-x-4 mt-2">
-                                <a href="#" className="text-white hover:text-fuchsia-400 transition duration-300">
-                                    <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.46 6c-.84.37-1.75.62-2.69.73.96-.58 1.7-1.5 2.04-2.6-.9.54-1.9.93-2.96 1.14-.85-.9-2.06-1.47-3.41-1.47-2.58 0-4.68 2.1-4.68 4.68 0 .37.04.73.11 1.07-3.9-.2-7.35-2.07-9.66-4.9-.4 1.1-.63 2.3-.63 3.6 0 1.62.82 3.05 2.07 3.9-.76-.02-1.47-.23-2.09-.57v.06c0 2.27 1.62 4.16 3.76 4.59-.4.11-.83.17-1.27.17-.31 0-.6-.03-.89-.08.6 1.86 2.34 3.22 4.4 3.26-1.6 1.25-3.62 2-5.82 2-.38 0-.76-.02-1.13-.07 2.08 1.34 4.56 2.13 7.23 2.13 8.67 0 13.4-7.16 13.4-13.4 0-.2-.01-.4-.02-.6.92-.66 1.72-1.48 2.35-2.42z"/></svg>
+                                <a href="https://www.instagram.com/awscloudclub.vitb" className="text-white hover:text-fuchsia-400 transition duration-300">
+                                    <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm4.25 3.25a5.25 5.25 0 1 1 0 10.5 5.25 5.25 0 0 1 0-10.5zm0 1.5a3.75 3.75 0 1 0 0 7.5 3.75 3.75 0 0 0 0-7.5zm5.13.88a1.13 1.13 0 1 1-2.25 0 1.13 1.13 0 0 1 2.25 0z"/></svg>
                                 </a>
-                                <a href="#" className="text-white hover:text-fuchsia-400 transition duration-300">
+                                <a href="https://www.linkedin.com/company/aws-cloud-club-vitbhopaluniveristy/" className="text-white hover:text-fuchsia-400 transition duration-300">
                                     <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                                 </a>
                             </div>
