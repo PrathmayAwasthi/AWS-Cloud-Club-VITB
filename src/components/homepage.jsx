@@ -773,17 +773,17 @@ const App = () => {
               </style>
               <div className="scrolling-gallery flex flex-col gap-4">
                 {[
-                  "/images/IMG_0861.jpg",
-                  "/images/IMG_0801.jpg",
-                  "/images/IMG_0799.jpg",
-                  "/images/IMG_0865.jpg",
-                  "/images/IMG_0914.jpg",
-                  "/images/IMG_0920.jpg",
-                  "/images/IMG_0928.jpg",
+                  "images/IMG_0861.jpg",
+                  "images/IMG_0801.jpg",
+                  "images/IMG_0799.jpg",
+                  "images/IMG_0865.jpg",
+                  "images/IMG_0914.jpg",
+                  "images/IMG_0920.jpg",
+                  "images/IMG_0928.jpg",
                   // Duplicate the first few images for seamless looping
-                  "/images/IMG_0861.jpg",
-                  "/images/IMG_0801.jpg",
-                  "/images/IMG_0799.jpg",
+                  "images/IMG_0861.jpg",
+                  "images/IMG_0801.jpg",
+                  "images/IMG_0799.jpg",
                 ].map((img, i) => (
                   <div
                     key={i}
