@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Interface</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: #0a0a0a;
+            color: #ffffff;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        .interface-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background: radial-gradient(ellipse at center, #1a1a2e 0%, #0a0a0a 70%);
+        }
+
+        .background-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(100, 150, 255, 0.6);
+            border-radius: 50%;
+            animation: float 10s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) translateX(50px); opacity: 0; }
+        }
+
+        .header {
+            position: absolute;
+            top: 60px;
+            left: 60px;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            letter-spacing: 8px;
+            color: #ffffff;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        .team-display {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 1200px;
+            height: 80%;
+            opacity: 0;
+            transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .team-display.active {
+            opacity: 1;
+        }
+
+        .team-display.exit {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0.8);
+        }
+
+        .central-visual {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 0 auto 40px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(50, 100, 255, 0.3) 0%, rgba(100, 50, 200, 0.1) 70%, transparent 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+
+        .central-visual:hover {
+            transform: scale(1.05);
+            background: radial-gradient(circle, rgba(50, 100, 255, 0.5) 0%, rgba(100, 50, 200, 0.2) 70%, transparent 100%);
+        }
+
+        .central-visual::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            border: 1px solid rgba(100, 150, 255, 0.3);
+            border-radius: 50%;
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.1); opacity: 0.1; }
+        }
+
+        .team-icon {
+            font-size: 4rem;
+            color: #6495ff;
+            text-shadow: 0 0 30px rgba(100, 149, 255, 0.8);
+        }
+
+        .team-info {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .team-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        .team-subtitle {
+            font-size: 1rem;
+            color: #888;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .team-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #ccc;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .team-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #6495ff;
+            text-shadow: 0 0 10px rgba(100, 149, 255, 0.8);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-indicators {
+            position: absolute;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border: 1px solid #6495ff;
+            border-radius: 50%;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicator.active {
+            background: #6495ff;
+            box-shadow: 0 0 15px rgba(100, 149, 255, 0.8);
+        }
+
+        .progress-bar {
+            position: absolute;
+            top: 200px;
+            left: 60px;
+            width: 200px;
+            height: 2px;
+            background: rgba(100, 149, 255, 0.2);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #6495ff, #4066ff);
+            width: 0%;
+            transition: width 0.1s linear;
+            box-shadow: 0 0 10px rgba(100, 149, 255, 0.8);
+        }
+
+        .timer-display {
+            position: absolute;
+            top: 160px;
+            left: 60px;
+            font-size: 1.2rem;
+            color: #6495ff;
+            font-family: 'Courier New', monospace;
+        }
+
+        .next-button {
+            position: absolute;
+            bottom: 60px;
+            right: 60px;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #6495ff, #4066ff);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(100, 149, 255, 0.4);
+        }
+
+        .next-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(100, 149, 255, 0.8);
+        }
+
+        .corner-elements {
+            position: absolute;
+            top: 60px;
+            right: 60px;
+            display: flex;
+            gap: 20px;
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .side-indicators {
+            position: absolute;
+            left: 60px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .side-indicator {
+            width: 20px;
+            height: 2px;
+            background: rgba(100, 149, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .side-indicator.active {
+            background: #6495ff;
+            width: 40px;
+            box-shadow: 0 0 10px rgba(100, 149, 255, 0.8);
+        }
+
+        @media (max-width: 768px) {
+            .central-visual {
+                width: 300px;
+                height: 300px;
+            }
+            
+            .team-title {
+                font-size: 2rem;
+            }
+            
+            .team-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .logo {
+                font-size: 2rem;
+                letter-spacing: 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="interface-container">
+        <div class="background-particles" id="particles"></div>
+        
+        <div class="header">
+            <div class="logo">Heading</div>
+        </div>
+
+        <div class="corner-elements">
+            <span>::::::::::::</span>
+        </div>
+
+        <div class="timer-display" id="timer">[[ 017 ]]</div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <div class="side-indicators">
+            <div class="side-indicator active"></div>
+            <div class="side-indicator"></div>
+            <div class="side-indicator"></div>
+            <div class="side-indicator"></div>
+            <div class="side-indicator"></div>
+        </div>
+
+        <!-- Technical Team -->
+        <div class="team-display active" data-team="technical">
+            <div class="central-visual" onclick="showTeamDetails('technical')">
+                <div class="team-icon">⚡</div>
+            </div>
+            <div class="team-info">
+                <div class="team-title">Technical Division</div>
+                <div class="team-subtitle">Core Development Unit</div>
+                <div class="team-description">
+                    Elite engineering collective specialized in quantum computing architectures, 
+                    neural network optimization, and distributed system harmonics. Operating at 
+                    the intersection of possibility and reality.
+                </div>
+                <div class="team-stats">
+                    <div class="stat">
+                        <div class="stat-number">12</div>
+                        <div class="stat-label">Engineers</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">847</div>
+                        <div class="stat-label">Deployments</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">99.7%</div>
+                        <div class="stat-label">Uptime</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PR & Outreach Team -->
+        <div class="team-display" data-team="pr">
+            <div class="central-visual" onclick="showTeamDetails('pr')">
+                <div class="team-icon">📡</div>
+            </div>
+            <div class="team-info">
+                <div class="team-title">Communications Hub</div>
+                <div class="team-subtitle">External Relations Protocol</div>
+                <div class="team-description">
+                    Strategic communication architects orchestrating global narrative streams, 
+                    community synthesis protocols, and stakeholder alignment matrices. 
+                    Bridging dimensions between vision and perception.
+                </div>
+                <div class="team-stats">
+                    <div class="stat">
+                        <div class="stat-number">08</div>
+                        <div class="stat-label">Specialists</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">2.4M</div>
+                        <div class="stat-label">Reach</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">94%</div>
+                        <div class="stat-label">Engagement</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Team -->
+        <div class="team-display" data-team="content">
+            <div class="central-visual" onclick="showTeamDetails('content')">
+                <div class="team-icon">🌐</div>
+            </div>
+            <div class="team-info">
+                <div class="team-title">Content Synthesis Lab</div>
+                <div class="team-subtitle">Information Architecture Division</div>
+                <div class="team-description">
+                    Narrative architects and digital experience designers crafting immersive 
+                    content ecosystems. Specializing in multi-dimensional storytelling, 
+                    interactive knowledge transfer, and consciousness-expanding media.
+                </div>
+                <div class="team-stats">
+                    <div class="stat">
+                        <div class="stat-number">10</div>
+                        <div class="stat-label">Creators</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">156</div>
+                        <div class="stat-label">Projects</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">4.8M</div>
+                        <div class="stat-label">Views</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-indicators">
+            <div class="indicator active" data-team="0"></div>
+            <div class="indicator" data-team="1"></div>
+            <div class="indicator" data-team="2"></div>
+        </div>
+
+        <button class="next-button" onclick="nextTeam()" id="nextBtn">→</button>
+    </div>
+
+    <script>
+        let currentTeamIndex = 0;
+        let autoTransitionInterval;
+        let progressInterval;
+        let timeLeft = 17;
+        const teams = ['technical', 'pr', 'content'];
+
+        function createParticles() {
+            const container = document.getElementById('particles');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 10 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 5) + 's';
+                container.appendChild(particle);
+            }
+        }
+
+        function updateTimer() {
+            const timerDisplay = document.getElementById('timer');
+            timerDisplay.textContent = `[[ ${timeLeft.toString().padStart(3, '0')} ]]`;
+            timeLeft--;
+            
+            if (timeLeft < 0) {
+                timeLeft = 17;
+            }
+        }
+
+        function updateProgress() {
+            const progressFill = document.getElementById('progressFill');
+            const progress = ((17 - timeLeft) / 17) * 100;
+            progressFill.style.width = progress + '%';
+        }
+
+        function showTeam(index) {
+            const teamDisplays = document.querySelectorAll('.team-display');
+            const indicators = document.querySelectorAll('.indicator');
+            const sideIndicators = document.querySelectorAll('.side-indicator');
+            
+            // Hide current team
+            teamDisplays.forEach(display => {
+                display.classList.remove('active');
+                display.classList.add('exit');
+            });
+            
+            setTimeout(() => {
+                teamDisplays.forEach(display => {
+                    display.classList.remove('exit');
+                });
+                
+                // Show new team
+                teamDisplays[index].classList.add('active');
+                
+                // Update indicators
+                indicators.forEach((indicator, i) => {
+                    indicator.classList.toggle('active', i === index);
+                });
+                
+                sideIndicators.forEach((indicator, i) => {
+                    indicator.classList.toggle('active', i === index);
+                });
+            }, 600);
+        }
+
+        function nextTeam() {
+            currentTeamIndex = (currentTeamIndex + 1) % teams.length;
+            showTeam(currentTeamIndex);
+            resetTimer();
+        }
+
+        function resetTimer() {
+            timeLeft = 17;
+            clearInterval(progressInterval);
+            startProgress();
+        }
+
+        function startAutoTransition() {
+            autoTransitionInterval = setInterval(() => {
+                nextTeam();
+            }, 17000);
+        }
+
+        function startProgress() {
+            progressInterval = setInterval(() => {
+                updateTimer();
+                updateProgress();
+            }, 1000);
+        }
+
+        function showTeamDetails(teamKey) {
+            // This would show detailed team member information
+            // For now, we'll just trigger the next transition
+            console.log(`Showing details for ${teamKey} team`);
+            // You can implement a modal or detailed view here
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            startAutoTransition();
+            startProgress();
+            
+            // Indicator click handlers
+            document.querySelectorAll('.indicator').forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    currentTeamIndex = index;
+                    showTeam(currentTeamIndex);
+                    resetTimer();
+                    clearInterval(autoTransitionInterval);
+                    startAutoTransition();
+                });
+            });
+            
+            // Pause on hover
+            const container = document.querySelector('.interface-container');
+            container.addEventListener('mouseenter', () => {
+                clearInterval(autoTransitionInterval);
+                clearInterval(progressInterval);
+            });
+            
+            container.addEventListener('mouseleave', () => {
+                startAutoTransition();
+                startProgress();
+            });
+        });
+    </script>
+</body>
+</html>

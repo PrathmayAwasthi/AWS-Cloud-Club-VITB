@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-
-const App = () => {
+const Homepage = ({ onNavigate }) => {
   // Loading state
   const [isLoading, setIsLoading] = useState(true);
   const [loadingProgress, setLoadingProgress] = useState(0);
@@ -140,125 +139,79 @@ const App = () => {
 
       {/* Header Section */}
       <header className="bg-black bg-opacity-50 py-4 shadow-lg sticky top-0 z-50 backdrop-blur-sm">
-        <nav className="container mx-auto px-4 flex justify-between items-center">
-          {/* Logo */}
-          <div className="flex items-center gap-2">
-            <img
-              src="/images/aws_club_logo.png"
-              width="100px"
-              alt="AWS Club Logo"
-            />
-            <a></a>
-            <a href="#" className="text-3xl font-extrabold tracking-tight">
-              <span className="text-white"> AWS </span>
-              <p>
-                <span className="text-gradient"> Cloud Club VITB</span>
-              </p>
-            </a>
-          </div>
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
-            <a
-              href="#home"
-              className="text-white hover:text-fuchsia-400 transition duration-300 font-medium"
-            >
-              Home
-            </a>
-            <a
-              href="#about"
-              className="text-white hover:text-fuchsia-400 transition duration-300 font-medium"
-            >
-              About Us
-            </a>
-            <a
-              href="#events"
-              className="text-white hover:text-fuchsia-400 transition duration-300 font-medium"
-            >
-              Events
-            </a>
-            <a
-              href="#join"
-              className="text-white hover:text-fuchsia-400 transition duration-300 font-medium"
-            >
-              Gallery
-            </a>
-            <a
-              href="#contact"
-              className="text-white hover:text-fuchsia-400 transition duration-300 font-medium"
-            >
-              Contact
-            </a>
-          </div>
-
-          {/* Mobile Menu Button (Hamburger) */}
-          <div className="md:hidden">
-            <button
-              className="text-white focus:outline-none"
-              onClick={toggleMobileMenu}
-            >
-              <svg
-                className="w-8 h-8"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                ></path>
-              </svg>
-            </button>
-          </div>
-        </nav>
-
-        {/* Mobile Menu */}
-        <div
-          className={`md:hidden bg-black bg-opacity-70 py-4 mt-2 rounded-lg mx-4 ${
-            isMobileMenuOpen ? "block" : "hidden"
-          }`}
-        >
-          <div className="flex flex-col items-center space-y-4">
-            <a
-              href="#home"
-              className="text-white hover:text-fuchsia-400 transition duration-300 font-medium w-full text-center py-2 rounded-md"
-              onClick={toggleMobileMenu}
-            >
-              Home
-            </a>
-            <a
-              href="#about"
-              className="text-white hover:text-fuchsia-400 transition duration-300 font-medium w-full text-center py-2 rounded-md"
-              onClick={toggleMobileMenu}
-            >
-              About Us
-            </a>
-            <a
-              href="#events"
-              className="text-white hover:text-fuchsia-400 transition duration-300 font-medium w-full text-center py-2 rounded-md"
-              onClick={toggleMobileMenu}
-            >
-              Events
-            </a>
-            <a
-              href="#join"
-              className="text-white hover:text-fuchsia-400 transition duration-300 font-medium w-full text-center py-2 rounded-md"
-              onClick={toggleMobileMenu}
-            >
-              Join Us
-            </a>
-            <a
-              href="#contact"
-              className="text-white hover:text-fuchsia-400 transition duration-300 font-medium w-full text-center py-2 rounded-md"
-              onClick={toggleMobileMenu}
-            >
-              Contact
-            </a>
-          </div>
+      <nav className="container mx-auto px-4 flex justify-between items-center">
+        {/* Logo */}
+        <div className="flex items-center gap-2">
+          <img
+            src="/images/aws_club_logo.png"
+            width="100px"
+            alt="AWS Club Logo"
+          />
+          <a className="text-3xl font-extrabold tracking-tight">
+            <span className="text-white"> AWS </span>
+            <p>
+              <span className="text-gradient"> Cloud Club VITB</span>
+            </p>
+          </a>
         </div>
-      </header>
+
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex space-x-8">
+          <button
+            onClick={() => onNavigate('home')}
+            className="text-white hover:text-fuchsia-400 transition duration-300 font-medium"
+          >
+            Home
+          </button>
+          <button
+            onClick={() => onNavigate('about')}
+            className="text-white hover:text-fuchsia-400 transition duration-300 font-medium"
+          >
+            About Us
+          </button>
+          <a
+            href="#events"
+            className="text-white hover:text-fuchsia-400 transition duration-300 font-medium"
+          >
+            Events
+          </a>
+          <a
+            href="#join"
+            className="text-white hover:text-fuchsia-400 transition duration-300 font-medium"
+          >
+            Gallery
+          </a>
+          <a
+            href="#contact"
+            className="text-white hover:text-fuchsia-400 transition duration-300 font-medium"
+          >
+            Contact
+          </a>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden">
+          <button
+            className="text-white focus:outline-none"
+            onClick={toggleMobileMenu}
+          >
+            <svg
+              className="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
 
       {/* Hero Section */}
       <section
@@ -773,17 +726,15 @@ const App = () => {
               </style>
               <div className="scrolling-gallery flex flex-col gap-4">
                 {[
-                  "images/IMG_0861.jpg",
-                  "images/IMG_0801.jpg",
-                  "images/IMG_0799.jpg",
-                  "images/IMG_0865.jpg",
-                  "images/IMG_0914.jpg",
-                  "images/IMG_0920.jpg",
-                  "images/IMG_0928.jpg",
-                  // Duplicate the first few images for seamless looping
-                  "images/IMG_0861.jpg",
-                  "images/IMG_0801.jpg",
-                  "images/IMG_0799.jpg",
+                  "images/1.jpg",
+                  "images/2.jpg",
+                  "images/3.jpg",
+                  "images/4.jpg",
+                  "images/5.jpg",
+                  "images/6.jpg",
+                  "images/7.jpg",
+                  "images/8.jpg",
+                  "images/9.jpg",
                 ].map((img, i) => (
                   <div
                     key={i}
@@ -1142,4 +1093,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Homepage;
