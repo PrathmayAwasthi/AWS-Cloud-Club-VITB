@@ -169,12 +169,12 @@ const Homepage = ({ onNavigate }) => {
           >
             About Us
           </button>
-          <a
-            href="#events"
+          <button
+            onClick={() => onNavigate('events')}
             className="text-white hover:text-fuchsia-400 transition duration-300 font-medium"
           >
             Events
-          </a>
+          </button>
           <a
             href="#join"
             className="text-white hover:text-fuchsia-400 transition duration-300 font-medium"
