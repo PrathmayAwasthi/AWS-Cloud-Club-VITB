@@ -316,7 +316,7 @@ const About = () => {
               Contact
             </a>
             <a
-              href="//#about"
+              href="/#about_club"
               className="text-white hover:text-fuchsia-400 transition duration-300 font-medium"
             >
             About Club
@@ -390,7 +390,7 @@ const About = () => {
               Contact
             </a>
             <a
-              href="/#about"
+              href="/#about_club"
               className="text-white hover:text-fuchsia-400 transition duration-300 font-medium w-full text-center py-2 rounded-md"
               onClick={toggleMobileMenu}
             >
