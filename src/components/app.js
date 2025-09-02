@@ -16,7 +16,7 @@ function App() {
       {currentPage === 'home' && <Homepage onNavigate={handleNavigation} />}
       {currentPage === 'about' && <About />}
       {currentPage === 'events' && <Events on Navigate={handleNavigation} />}
-      {currentPage === 'About' && <Events on Navigate={handleNavigation} />}
+      {currentPage === 'About' && <About on Navigate={handleNavigation} />}
     </div>
   );
 }
