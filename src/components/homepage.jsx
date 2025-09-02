@@ -187,6 +187,12 @@ const Homepage = ({ onNavigate }) => {
           >
             Contact
           </a>
+          <button
+            onClick={() => onNavigate('about')}
+            className="text-white hover:text-fuchsia-400 transition duration-300 font-medium"
+          >
+            About Club
+          </button>
         </div>
 
         {/* Mobile Menu Button */}
