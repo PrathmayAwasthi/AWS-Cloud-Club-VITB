@@ -315,12 +315,7 @@ const About = () => {
             >
               Contact
             </a>
-            <a
-              href="/#club"
-              className="text-white hover:text-fuchsia-400 transition duration-300 font-medium"
-            >
-            About Club
-            </a>
+            
           </div>
 
           {/* Mobile Menu Button */}
@@ -389,13 +384,7 @@ const About = () => {
             >
               Contact
             </a>
-            <a
-              href="/#club"
-              className="text-white hover:text-fuchsia-400 transition duration-300 font-medium w-full text-center py-2 rounded-md"
-              onClick={toggleMobileMenu}
-            >
-            About Club
-            </a>
+           
           </div>
         </div>
       </header>
