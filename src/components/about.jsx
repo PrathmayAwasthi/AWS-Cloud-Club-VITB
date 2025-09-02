@@ -316,7 +316,7 @@ const About = () => {
               Contact
             </a>
             <a
-              href="/#about"
+              href="//#about"
               className="text-white hover:text-fuchsia-400 transition duration-300 font-medium"
             >
             About Club
