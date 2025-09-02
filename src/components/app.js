@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Homepage from './homepage';
 import About from './about';
 import Events from './Events-Page';
+import About Club from '../about_club';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -15,6 +16,7 @@ function App() {
       {currentPage === 'home' && <Homepage onNavigate={handleNavigation} />}
       {currentPage === 'about' && <About />}
       {currentPage === 'events' && <Events on Navigate={handleNavigation} />}
+      {currentPage === 'About' && <Events on Navigate={handleNavigation} />}
     </div>
   );
 }
