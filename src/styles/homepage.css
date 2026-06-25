@@ -1,0 +1,167 @@
+/* Montserrat is loaded globally via index.css */
+
+body {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* --- Accent CSS variable for consistent #6a5acd usage --- */
+:root {
+  --accent: #6a5acd;
+  --accent-light: #8b7fe8;
+  --accent-dark: #5648b0;
+}
+
+/* --- Heading style: ultra-bold Montserrat matching design reference --- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* Large display headings (hero) use black weight */
+.display-heading {
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+/* Section label tag style (like CLOUD CAPTAIN in the image) */
+.section-tag {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6a5acd;
+  background: rgba(106, 90, 205, 0.1);
+  border: 1px solid rgba(106, 90, 205, 0.25);
+  border-radius: 4px;
+  padding: 2px 10px;
+  display: inline-block;
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  will-change: opacity, transform;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: none;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+@keyframes scroll-up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.scrolling-gallery {
+  animation: scroll-up 30s linear infinite;
+}
+
+.scrolling-gallery:hover {
+  animation-play-state: paused;
+}
+
+/* Light mode: subtle grid dot pattern background (like design reference) */
+html:not(.dark) .section-bg-dots {
+  background-image: radial-gradient(circle, rgba(106, 90, 205, 0.12) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Accent color utilities */
+.text-accent { color: #6a5acd; }
+.bg-accent { background-color: #6a5acd; }
+.border-accent { border-color: #6a5acd; }
+
+/* Global homepage grid-line background pattern */
+.homepage-grid-bg {
+  background-image:
+    linear-gradient(rgba(99, 102, 241, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+html.dark .homepage-grid-bg {
+  background-image:
+    linear-gradient(rgba(168, 85, 247, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(168, 85, 247, 0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Cloudscape-inspired service card */
+.cloudscape-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.cloudscape-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.04) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cloudscape-card:hover {
+  transform: translateY(-2px);
+}
+
+.cloudscape-card:hover::before {
+  opacity: 1;
+}
+
+html.dark .cloudscape-card::before {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.07) 0%, transparent 60%);
+}
+
+/* Alternate section accent — adds a faint left border accent on even sections */
+section:nth-child(even) .cloudscape-card {
+  border-left: 2px solid transparent;
+}
+
+section:nth-child(even) .cloudscape-card:hover {
+  border-left-color: #6a5acd;
+}
+
+html.dark section:nth-child(even) .cloudscape-card:hover {
+  border-left-color: #a855f7;
+}
