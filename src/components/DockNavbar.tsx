@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 interface DockNavbarProps {
   onNavigate: (page: string) => void;
@@ -10,6 +10,17 @@ interface DockNavbarProps {
 const DockNavbar: React.FC<DockNavbarProps> = ({ onNavigate, currentPage, theme, toggleTheme }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -86,10 +97,10 @@ const DockNavbar: React.FC<DockNavbarProps> = ({ onNavigate, currentPage, theme,
               alt="AWS Club Logo"
             />
             <div className="flex flex-col">
-              <span className="text-slate-900 dark:text-white font-black text-[0.80rem] tracking-[0.08em] uppercase hidden lg:inline leading-tight" style={{ fontFamily: "'Montserrat', system-ui, sans-serif" }}>
+              <span className="text-slate-900 dark:text-white font-black text-[0.80rem] tracking-[0.08em] uppercase hidden sm:inline leading-tight" style={{ fontFamily: "'Montserrat', system-ui, sans-serif" }}>
                 AWS Student Builder Group
               </span>
-              <span className="text-[#6a5acd] font-bold text-[0.75rem] tracking-[0.1em] uppercase hidden lg:inline" style={{ fontFamily: "'Montserrat', system-ui, sans-serif" }}>
+              <span className="text-[#6a5acd] font-bold text-[0.75rem] tracking-[0.1em] uppercase hidden sm:inline" style={{ fontFamily: "'Montserrat', system-ui, sans-serif" }}>
                 VIT Bhopal
               </span>
             </div>
@@ -188,9 +199,15 @@ const DockNavbar: React.FC<DockNavbarProps> = ({ onNavigate, currentPage, theme,
               onClick={toggleMobileMenu}
               aria-label="Toggle mobile menu"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
-              </svg>
+              {isMobileMenuOpen ? (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              ) : (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+              )}
             </button>
           </div>
         </div>
@@ -245,6 +262,13 @@ const DockNavbar: React.FC<DockNavbarProps> = ({ onNavigate, currentPage, theme,
           </div>
         )}
       </header>
+
+      {isMobileMenuOpen && (
+        <div
+          className="fixed inset-0 z-40 md:hidden"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+      )}
     </>
   );
 };
