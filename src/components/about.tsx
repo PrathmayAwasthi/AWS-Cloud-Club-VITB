@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import DockNavbar from "./DockNavbar";
+import "../styles/about.css";
 
 interface TeamMember {
   id: number;
@@ -9,9 +10,11 @@ interface TeamMember {
 
 interface AboutProps {
   onNavigate: (page: string) => void;
+  theme: string;
+  toggleTheme: () => void;
 }
 
-const About: React.FC<AboutProps> = ({ onNavigate }) => {
+const About: React.FC<AboutProps> = ({ onNavigate, theme, toggleTheme }) => {
   const [hoveredMember, setHoveredMember] = useState<TeamMember | null>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
@@ -124,45 +127,17 @@ const About: React.FC<AboutProps> = ({ onNavigate }) => {
 
   return (
     <>
-      <style>{`
-        body {
-          font-family: 'Open Sans', system-ui, sans-serif;
-          background-color: #0f172a;
-          min-height: 100vh;
-          color: #ffffff;
-        }
-        ::-webkit-scrollbar { width: 8px; height: 8px; }
-        ::-webkit-scrollbar-track { background: #0f172a; }
-        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #475569; }
-        .btn-primary {
-          background-color: #ffffff;
-          color: #0f172a;
-          padding: 0.625rem 1.25rem;
-          border-radius: 0.375rem;
-          font-weight: 700;
-          transition: all 0.2s ease;
-          border: none;
-        }
-        .btn-primary:hover {
-          background-color: #f1f5f9;
-          transform: translateY(-1px);
-        }
-      `}</style>
 
-      <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet"
-      />
 
-      <div className="min-h-screen bg-[#0f172a] text-[#ffffff] font-sans flex flex-col">
-        <DockNavbar onNavigate={onNavigate} currentPage="about" />
+      <div className="min-h-screen bg-slate-50 dark:bg-[#0f172a] text-slate-800 dark:text-white flex flex-col transition-colors duration-300" style={{ fontFamily: "'Montserrat', system-ui, sans-serif" }}>
+        <DockNavbar onNavigate={onNavigate} currentPage="about" theme={theme} toggleTheme={toggleTheme} />
 
-        <main className="flex-1 min-w-0">
+        <main className="flex-1 min-w-0 pt-20">
           <section className="py-16 px-4">
             <div className="container mx-auto max-w-7xl">
-              <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
-                Admin <span className="text-white">Board</span>
+              <span className="section-tag mb-4 block text-center mx-auto">Leadership</span>
+              <h2 className="text-4xl md:text-5xl font-black text-center mb-16 text-slate-900 dark:text-white uppercase tracking-tight">
+                Admin <span className="bg-gradient-to-r from-[#6a5acd] via-indigo-500 to-purple-600 dark:from-[#8b7fe8] dark:via-indigo-400 dark:to-purple-400 text-transparent bg-clip-text">Board</span>
               </h2>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 justify-items-center">
@@ -173,13 +148,13 @@ const About: React.FC<AboutProps> = ({ onNavigate }) => {
                   { img: "/images/navya.jpeg", name: "Navya Srivastava", role: "Operational Lead", desc: "Orchestrating events and keeping the club running smoothly." },
                   { img: "/images/yash.jpg", name: "Yash Dhanraj Thakare", role: "Treasurer", desc: "Managing resources with integrity and fostering transparency." },
                 ].map((member, i) => (
-                  <div key={i} className="bg-[#1e293b] border border-[#334155] p-6 rounded-md text-center w-full max-w-xs flex flex-col items-center hover:border-slate-400 transition duration-150 transform hover:scale-105 hover:-translate-y-1">
-                    <div className="w-32 h-32 mb-4 rounded-full overflow-hidden border-2 border-[#334155]">
+                  <div key={i} className="bg-white dark:bg-[#1e293b] border border-slate-200 dark:border-[#334155] p-6 rounded-xl text-center w-full max-w-xs flex flex-col items-center hover:border-indigo-500 dark:hover:border-[#a855f7] shadow-sm hover:shadow-md transition duration-200 transform hover:-translate-y-1">
+                    <div className="w-32 h-32 mb-4 rounded-full overflow-hidden border-2 border-slate-200 dark:border-[#334155] shadow-sm">
                       <img src={member.img} alt={member.name} className="object-cover w-full h-full" />
                     </div>
-                    <h3 className="text-lg font-bold text-white mb-1">{member.name}</h3>
-                    <p className="text-sm font-semibold text-[#94a3b8] mb-2">{member.role}</p>
-                    <p className="text-xs text-[#94a3b8] leading-relaxed">{member.desc}</p>
+                    <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-1">{member.name}</h3>
+                    <p className="text-sm font-bold text-indigo-600 dark:text-purple-400 mb-2">{member.role}</p>
+                    <p className="text-xs text-slate-500 dark:text-[#94a3b8] leading-relaxed">{member.desc}</p>
                   </div>
                 ))}
               </div>
@@ -190,9 +165,9 @@ const About: React.FC<AboutProps> = ({ onNavigate }) => {
             <div className="container mx-auto max-w-7xl">
               {teamSections.map((section) => (
                 <div key={section.title} className="mb-16">
-                  <h2 className="text-3xl font-bold text-white text-center mb-8">{section.title}</h2>
+                  <h2 className="text-3xl font-black text-slate-900 dark:text-white text-center mb-8 uppercase tracking-tight">{section.title}</h2>
                   <div className="max-w-4xl mx-auto">
-                    <div className="relative mx-auto bg-[#1e293b] rounded-md overflow-hidden border border-[#334155] max-w-4xl w-full">
+                    <div className="relative mx-auto bg-white dark:bg-[#1e293b] rounded-2xl overflow-hidden border border-slate-200 dark:border-[#334155] max-w-4xl w-full shadow-sm">
                       <div className="relative">
                         <img
                           src={section.image}
@@ -203,7 +178,7 @@ const About: React.FC<AboutProps> = ({ onNavigate }) => {
                         {hotspotPositions[section.title]?.map((pos, i) => (
                           <div
                             key={i}
-                            className="absolute cursor-pointer hover:bg-white/10 rounded transition-colors duration-150"
+                            className="absolute cursor-pointer hover:bg-indigo-500/10 dark:hover:bg-purple-500/10 rounded transition-colors duration-150"
                             style={{
                               left: pos.left,
                               top: pos.top,
@@ -223,15 +198,15 @@ const About: React.FC<AboutProps> = ({ onNavigate }) => {
 
               {hoveredMember && (
                 <div
-                  className="fixed z-50 bg-[#1e293b] border border-[#334155] rounded-md px-4 py-3 shadow-xl"
+                  className="fixed z-50 bg-white/95 dark:bg-[#1e293b]/95 border border-slate-200/80 dark:border-[#334155] rounded-xl px-4 py-3 shadow-xl backdrop-blur-sm"
                   style={{
                     left: `${Math.min(mousePosition.x + 15, window.innerWidth - 200)}px`,
                     top: `${Math.max(mousePosition.y - 60, 10)}px`,
                     pointerEvents: 'none' as const,
                   }}
                 >
-                  <h3 className="text-base font-bold text-white">{hoveredMember.name}</h3>
-                  <p className="text-sm text-[#94a3b8] font-medium">{hoveredMember.role}</p>
+                  <h3 className="text-base font-bold text-slate-900 dark:text-white">{hoveredMember.name}</h3>
+                  <p className="text-xs font-bold text-indigo-600 dark:text-purple-400 mt-0.5">{hoveredMember.role}</p>
                 </div>
               )}
             </div>

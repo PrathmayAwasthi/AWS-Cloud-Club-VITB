@@ -1,0 +1,31 @@
+/* Montserrat is loaded globally via index.css */
+
+body {
+  font-family: 'Montserrat', system-ui, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* Section label tag style (like CLOUD CAPTAIN in the design reference) */
+.section-tag {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6a5acd;
+  background: rgba(106, 90, 205, 0.1);
+  border: 1px solid rgba(106, 90, 205, 0.25);
+  border-radius: 4px;
+  padding: 2px 10px;
+  display: inline-block;
+}
+
+.about-tooltip {
+  pointer-events: none;
+  z-index: 9999;
+}
