@@ -97,10 +97,10 @@ const DockNavbar: React.FC<DockNavbarProps> = ({ onNavigate, currentPage, theme,
               alt="AWS Club Logo"
             />
             <div className="flex flex-col">
-              <span className="text-slate-900 dark:text-white font-black text-[0.80rem] tracking-[0.08em] uppercase hidden sm:inline leading-tight" style={{ fontFamily: "'Montserrat', system-ui, sans-serif" }}>
+              <span className="text-slate-900 dark:text-white font-black text-[0.60rem] sm:text-[0.80rem] tracking-[0.06em] sm:tracking-[0.08em] uppercase leading-tight" style={{ fontFamily: "'Montserrat', system-ui, sans-serif" }}>
                 AWS Student Builder Group
               </span>
-              <span className="text-[#6a5acd] font-bold text-[0.75rem] tracking-[0.1em] uppercase hidden sm:inline" style={{ fontFamily: "'Montserrat', system-ui, sans-serif" }}>
+              <span className="text-[#6a5acd] font-bold text-[0.55rem] sm:text-[0.75rem] tracking-[0.06em] sm:tracking-[0.1em] uppercase" style={{ fontFamily: "'Montserrat', system-ui, sans-serif" }}>
                 VIT Bhopal
               </span>
             </div>
