@@ -20,8 +20,8 @@ const Homepage: React.FC<HomepageProps> = ({ onNavigate, theme, toggleTheme }) =
         </svg>
       ),
       awsServices: [
-        { name: "Amazon EC2", logo: "https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/main/dist/Compute/AmazonEC2.png" },
-        { name: "Amazon VPC", logo: "https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/main/dist/NetworkingContentDelivery/AmazonVPC.png" },
+        { name: "Amazon EC2", logo: "/services/ec2.png" },
+        { name: "Amazon VPC", logo: "/services/vpc.png" },
       ]
     },
     {
@@ -33,8 +33,8 @@ const Homepage: React.FC<HomepageProps> = ({ onNavigate, theme, toggleTheme }) =
         </svg>
       ),
       awsServices: [
-        { name: "Amazon S3", logo: "https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/main/dist/Storage/AmazonS3.png" },
-        { name: "AWS Lambda", logo: "https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/main/dist/Compute/AWSLambda.png" },
+        { name: "Amazon S3", logo: "/services/s3.png" },
+        { name: "AWS Lambda", logo: "/services/lambda.png" },
       ]
     },
     {
@@ -47,8 +47,8 @@ const Homepage: React.FC<HomepageProps> = ({ onNavigate, theme, toggleTheme }) =
         </svg>
       ),
       awsServices: [
-        { name: "AWS CodePipeline", logo: "https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/main/dist/DeveloperTools/AWSCodePipeline.png" },
-        { name: "Amazon EKS", logo: "https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/main/dist/Compute/AmazonElasticKubernetesService.png" },
+        { name: "AWS CodePipeline", logo: "/services/codepipeline.png" },
+        { name: "Amazon EKS", logo: "/services/eks.png" },
       ]
     },
     {
@@ -60,8 +60,8 @@ const Homepage: React.FC<HomepageProps> = ({ onNavigate, theme, toggleTheme }) =
         </svg>
       ),
       awsServices: [
-        { name: "AWS Amplify", logo: "https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/main/dist/FrontEndWebMobile/AWSAmplify.png" },
-        { name: "AWS Organizations", logo: "https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/main/dist/ManagementGovernance/AWSOrganizations.png" },
+        { name: "AWS Amplify", logo: "/services/amplify.png" },
+        { name: "AWS Organizations", logo: "/services/organisations.png" },
       ]
     }
   ];
@@ -76,8 +76,8 @@ const Homepage: React.FC<HomepageProps> = ({ onNavigate, theme, toggleTheme }) =
         </svg>
       ),
       awsServices: [
-        { name: "Amazon SageMaker", logo: "https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/main/dist/MachineLearning/AmazonSageMaker.png" },
-        { name: "Amazon Bedrock", logo: "https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/main/dist/MachineLearning/AmazonBedrock.png" },
+        { name: "Amazon SageMaker", logo: "/services/sagemaker.png" },
+        { name: "Amazon Bedrock", logo: "/services/bedrock.png" },
       ]
     },
     {
@@ -89,8 +89,8 @@ const Homepage: React.FC<HomepageProps> = ({ onNavigate, theme, toggleTheme }) =
         </svg>
       ),
       awsServices: [
-        { name: "AWS Amplify", logo: "https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/main/dist/FrontEndWebMobile/AWSAmplify.png" },
-        { name: "Amazon CloudFront", logo: "https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/main/dist/NetworkingContentDelivery/AmazonCloudFront.png" },
+        { name: "AWS Amplify", logo: "/services/amplify.png" },
+        { name: "Amazon CloudFront", logo: "/services/cloudfront.png" },
       ]
     },
     {
@@ -102,8 +102,8 @@ const Homepage: React.FC<HomepageProps> = ({ onNavigate, theme, toggleTheme }) =
         </svg>
       ),
       awsServices: [
-        { name: "AWS CodePipeline", logo: "https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/main/dist/DeveloperTools/AWSCodePipeline.png" },
-        { name: "AWS CodeBuild", logo: "https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/main/dist/DeveloperTools/AWSCodeBuild.png" },
+        { name: "AWS CodePipeline", logo: "/services/codepipeline.png" },
+        { name: "AWS CodeBuild", logo: "/services/codebuild.png" },
       ]
     },
     {
@@ -115,8 +115,8 @@ const Homepage: React.FC<HomepageProps> = ({ onNavigate, theme, toggleTheme }) =
         </svg>
       ),
       awsServices: [
-        { name: "AWS IAM", logo: "https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/main/dist/SecurityIdentityCompliance/AWSIdentityAndAccessManagement.png" },
-        { name: "AWS Shield", logo: "https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/main/dist/SecurityIdentityCompliance/AWSShield.png" },
+        { name: "AWS IAM", logo: "/services/iam.png" },
+        { name: "AWS Shield", logo: "/services/shield.png" },
       ]
     }
   ];
@@ -131,8 +131,8 @@ const Homepage: React.FC<HomepageProps> = ({ onNavigate, theme, toggleTheme }) =
         </svg>
       ),
       awsServices: [
-        { name: "AWS IoT Core", logo: "https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/main/dist/InternetOfThings/AWSIoTCore.png" },
-        { name: "AWS Greengrass", logo: "https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/main/dist/InternetOfThings/AWSIoTGreengrass.png" },
+        { name: "AWS IoT Core", logo: "/services/iotcore.png" },
+        { name: "AWS Greengrass", logo: "/services/greengrass.png" },
       ]
     },
     {
@@ -144,8 +144,8 @@ const Homepage: React.FC<HomepageProps> = ({ onNavigate, theme, toggleTheme }) =
         </svg>
       ),
       awsServices: [
-        { name: "AWS CodeCommit", logo: "https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/main/dist/DeveloperTools/AWSCodeCommit.png" },
-        { name: "Amazon ECR", logo: "https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/main/dist/Compute/AmazonECR.png" },
+        { name: "AWS CodeCommit", logo: "/services/codesummit.png" },
+        { name: "Amazon ECR", logo: "/services/ecr.png" },
       ]
     },
     {
@@ -157,8 +157,8 @@ const Homepage: React.FC<HomepageProps> = ({ onNavigate, theme, toggleTheme }) =
         </svg>
       ),
       awsServices: [
-        { name: "AWS Organizations", logo: "https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/main/dist/ManagementGovernance/AWSOrganizations.png" },
-        { name: "AWS Cost Explorer", logo: "https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/main/dist/CloudFinancialManagement/AWSCostExplorer.png" },
+        { name: "AWS Organizations", logo: "/services/organisations.png" },
+        { name: "AWS Cost Explorer", logo: "/services/costexpo.png" },
       ]
     },
     {
@@ -170,8 +170,8 @@ const Homepage: React.FC<HomepageProps> = ({ onNavigate, theme, toggleTheme }) =
         </svg>
       ),
       awsServices: [
-        { name: "AWS Elastic Beanstalk", logo: "https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/main/dist/Compute/AWSElasticBeanstalk.png" },
-        { name: "Amazon DynamoDB", logo: "https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/main/dist/Database/AmazonDynamoDB.png" },
+        { name: "AWS Elastic Beanstalk", logo: "/services/beanstalk.png" },
+        { name: "Amazon DynamoDB", logo: "/services/dynamodb.png" },
       ]
     }
   ];
@@ -516,10 +516,10 @@ const Homepage: React.FC<HomepageProps> = ({ onNavigate, theme, toggleTheme }) =
                       </ul>
                     </div>
                   </div>
-                  <a href="#" className="text-indigo-600 dark:text-[#a855f7] hover:text-indigo-700 dark:hover:text-white font-bold text-xs inline-flex items-center gap-1 mt-2">
+                  <button className="text-indigo-600 dark:text-[#a855f7] hover:text-indigo-700 dark:hover:text-white font-bold text-xs inline-flex items-center gap-1 mt-2">
                     Learn More
                     <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
-                  </a>
+                  </button>
                 </div>
 
                 {/* Event 2 */}
@@ -534,10 +534,10 @@ const Homepage: React.FC<HomepageProps> = ({ onNavigate, theme, toggleTheme }) =
                       <p className="text-xs text-slate-500 dark:text-[#94a3b8] leading-relaxed">Light refreshments will be provided. Attendees also receive exclusive access to a Lambda cheat sheet.</p>
                     </div>
                   </div>
-                  <a href="#" className="text-indigo-600 dark:text-[#a855f7] hover:text-indigo-700 dark:hover:text-white font-bold text-xs inline-flex items-center gap-1 mt-2">
+                  <button className="text-indigo-600 dark:text-[#a855f7] hover:text-indigo-700 dark:hover:text-white font-bold text-xs inline-flex items-center gap-1 mt-2">
                     Learn More
                     <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
-                  </a>
+                  </button>
                 </div>
 
                 {/* Event 3 */}
@@ -552,10 +552,10 @@ const Homepage: React.FC<HomepageProps> = ({ onNavigate, theme, toggleTheme }) =
                       <p className="text-xs text-slate-500 dark:text-[#94a3b8] leading-relaxed">Virtual participation available with Slack channel support for Q&A between sessions.</p>
                     </div>
                   </div>
-                  <a href="#" className="text-indigo-600 dark:text-[#a855f7] hover:text-indigo-700 dark:hover:text-white font-bold text-xs inline-flex items-center gap-1 mt-2">
+                  <button className="text-indigo-600 dark:text-[#a855f7] hover:text-indigo-700 dark:hover:text-white font-bold text-xs inline-flex items-center gap-1 mt-2">
                     Learn More
                     <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
