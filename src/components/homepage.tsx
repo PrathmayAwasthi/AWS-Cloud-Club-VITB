@@ -516,10 +516,10 @@ const Homepage: React.FC<HomepageProps> = ({ onNavigate, theme, toggleTheme }) =
                       </ul>
                     </div>
                   </div>
-                  <a href="#" className="text-indigo-600 dark:text-[#a855f7] hover:text-indigo-700 dark:hover:text-white font-bold text-xs inline-flex items-center gap-1 mt-2">
+                  <button className="text-indigo-600 dark:text-[#a855f7] hover:text-indigo-700 dark:hover:text-white font-bold text-xs inline-flex items-center gap-1 mt-2">
                     Learn More
                     <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
-                  </a>
+                  </button>
                 </div>
 
                 {/* Event 2 */}
@@ -534,10 +534,10 @@ const Homepage: React.FC<HomepageProps> = ({ onNavigate, theme, toggleTheme }) =
                       <p className="text-xs text-slate-500 dark:text-[#94a3b8] leading-relaxed">Light refreshments will be provided. Attendees also receive exclusive access to a Lambda cheat sheet.</p>
                     </div>
                   </div>
-                  <a href="#" className="text-indigo-600 dark:text-[#a855f7] hover:text-indigo-700 dark:hover:text-white font-bold text-xs inline-flex items-center gap-1 mt-2">
+                  <button className="text-indigo-600 dark:text-[#a855f7] hover:text-indigo-700 dark:hover:text-white font-bold text-xs inline-flex items-center gap-1 mt-2">
                     Learn More
                     <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
-                  </a>
+                  </button>
                 </div>
 
                 {/* Event 3 */}
@@ -552,10 +552,10 @@ const Homepage: React.FC<HomepageProps> = ({ onNavigate, theme, toggleTheme }) =
                       <p className="text-xs text-slate-500 dark:text-[#94a3b8] leading-relaxed">Virtual participation available with Slack channel support for Q&A between sessions.</p>
                     </div>
                   </div>
-                  <a href="#" className="text-indigo-600 dark:text-[#a855f7] hover:text-indigo-700 dark:hover:text-white font-bold text-xs inline-flex items-center gap-1 mt-2">
+                  <button className="text-indigo-600 dark:text-[#a855f7] hover:text-indigo-700 dark:hover:text-white font-bold text-xs inline-flex items-center gap-1 mt-2">
                     Learn More
                     <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
